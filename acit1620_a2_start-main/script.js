@@ -38,7 +38,7 @@ function createSingleIndex(newContact) {
     return newLink;
 };
 
-//creates all of the DOM nodes that are unique to the Index page
+// creates all of the DOM nodes that are unique to the Index page
 function renderIndex(contactList) {
   let newList = document.querySelector(".main");
   for (i = 0; i < contactList.length; i++) {
@@ -47,7 +47,7 @@ function renderIndex(contactList) {
   }
 };
 
-//removes all of the DOM nodes that are unique to the View page
+// removes all of the DOM nodes that are unique to the View page
 function cleanUpView() {
   let removeUniqueView = document.querySelectorAll(".contactinfo");
   for (i = 0; i < removeUniqueView.length; i++) {
@@ -55,7 +55,7 @@ function cleanUpView() {
   }
 };
 
-//creates all of the DOM nodes that are unique to the View page
+// creates all of the DOM nodes that are unique to the View page
 function renderView(contactList) {
   let viewPage = document.querySelector(".main");
 
@@ -104,5 +104,13 @@ function renderView(contactList) {
   closeButton.setAttribute("value", "Close");
   closeButton.textContent = "Close";
   button.appendChild(closeButton);
-  
+
+};
+
+// removes all of the DOM nodes that are unique to the Create page
+function cleanUpCreate() {
+  let removeCreatePage = document.querySelectorAll(".contactedit")
+  for (i = 0; i < removeCreatePage.length; i++) {
+    removeCreatePage[i].remove()
+  }
 };
