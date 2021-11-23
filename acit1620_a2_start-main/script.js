@@ -114,3 +114,128 @@ function cleanUpCreate() {
     removeCreatePage[i].remove()
   }
 };
+
+//creates all of the DOM nodes that are unique to the Create page
+function renderCreate(contactList) {
+  let page = document.querySelector(".main");
+
+  let createContact = document.createElement("div");
+  createContact.classList.add("contactedit");
+  page.appendChild(createContact);
+
+  let image = document.createElement("div");
+  image.classList.add("contactimg");
+  createContact.appendChild(image);
+
+  const contactImg = document.createElement("img");
+  contactImg.setAttribute("src", "./img/profile.jpg");
+  contactImg.setAttribute("class", "profilepic");
+  contactImg.setAttribute("alt", "Profile picture");
+  image.appendChild(contactImg);
+
+  const contactForm = document.createElement("div");
+  contactForm.classList.add("form");
+  createContact.appendChild(contactForm);
+
+  //Contact Name Field
+  let container = document.createElement("div");
+  container.classList.add("inputcontainer");
+  contactForm.appendChild(container);
+
+
+  const name = document.createElement("input");
+  name.setAttribute("type", "text");
+  name.setAttribute("id", "contactname");
+  name.setAttribute("name", "contactname");
+  name.setAttribute("placeholder", "Contact Name");
+  container.appendChild(name);
+
+  let nameButton = document.createElement("button");
+  nameButton.classList.add("extrafield");
+  nameButton.setAttribute("id", "extranamefield");
+  nameButton.setAttribute("name", "extranamefield")
+  nameButton.textContent = "+";
+  container.appendChild(nameButton);
+
+  //Phone Number Field
+  let container2 = document.createElement("div");
+  container2.classList.add("inputcontainer");
+  contactForm.appendChild(container2);
+
+
+  const phone = document.createElement("input");
+  phone.classList.add("inputcontainer");
+  phone.setAttribute("type", "tel");
+  phone.setAttribute("id", "contactphone");
+  phone.setAttribute("name", "contactphone");
+  phone.setAttribute("placeholder", "Contact Phone");
+  container2.appendChild(phone);
+
+  let phoneButton = document.createElement("button");
+  phoneButton.classList.add("extrafield");
+  phoneButton.setAttribute("id", "extraphonefield");
+  phoneButton.setAttribute("name", "extraphonefield")
+  phoneButton.textContent = "+";
+  container2.appendChild(phoneButton);
+
+  //Address Field
+  let container3 = document.createElement("div");
+  container3.classList.add("inputcontainer");
+  contactForm.appendChild(container3);
+
+  const address = document.createElement("input");
+  address.classList.add("inputcontainer");
+  address.setAttribute("type", "text");
+  address.setAttribute("id", "contactaddress");
+  address.setAttribute("name", "contactaddress");
+  address.setAttribute("placeholder", "Contact Address");
+  container3.appendChild(address);
+
+  let addressButton = document.createElement("button");
+  addressButton.classList.add("extrafield");
+  addressButton.setAttribute("id", "extraaddressfield");
+  addressButton.setAttribute("name", "extraaddressfield")
+  addressButton.textContent = "+";
+  container3.appendChild(addressButton);
+
+  //Email Field
+  let container4 = document.createElement("div");
+  container4.classList.add("inputcontainer");
+  contactForm.appendChild(container4);
+
+  const email = document.createElement("input");
+  email.classList.add("inputcontainer");
+  email.setAttribute("type", "email");
+  email.setAttribute("id", "contactemail");
+  email.setAttribute("name", "contactemail");
+  email.setAttribute("placeholder", "Contact Email");
+  container4.appendChild(email);
+
+  let emailButton = document.createElement("button");
+  emailButton.classList.add("extrafield");
+  emailButton.setAttribute("id", "extraemailfield");
+  emailButton.setAttribute("name", "extraemailfield")
+  emailButton.textContent = "+";
+  container4.appendChild(emailButton);
+
+  const button = document.createElement("div")
+  button.classList.add("buttons");
+  contactForm.appendChild(button);
+
+  //Submit and Cancel Button
+
+  const submitButton = document.createElement("button");
+  submitButton.classList.add("button", "save");
+  submitButton.setAttribute("value", "Edit");
+  submitButton.textContent = "Save Contact";
+  button.appendChild(submitButton);
+
+  const resetButton = document.createElement("button");
+  resetButton.classList.add("button", "cancel");
+  resetButton.setAttribute("id", "cancel");
+  resetButton.setAttribute("name", "cancel");
+  resetButton.textContent = "Cancel";
+  button.appendChild(resetButton);
+
+  console.log(page)
+}
